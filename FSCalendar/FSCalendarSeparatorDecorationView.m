@@ -15,14 +15,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = FSCalendarStandardSeparatorColor;
+        //        self.backgroundColor = FSCalendarStandardSeparatorColor;
+        self.backgroundColor = FSColorRGBA(236.0,238.0,241.0,1.0);
     }
     return self;
 }
 
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
 {
-    self.frame = layoutAttributes.frame;
+    CGRect frame = layoutAttributes.frame;
+    frame.origin.y = layoutAttributes.frame.origin.y - 4;
+    frame.size.height = 1;
+    self.frame = frame;
 }
 
 @end
